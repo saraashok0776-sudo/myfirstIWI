@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Method Demo</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            text-align: center;
+
+            
+            background: linear-gradient(135deg, #ff6ec4, #7873f5, #4ade80);
+            background-size: 300% 300%;
+            animation: gradientMove 8s ease infinite;
+            color: white;
+        }
+
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h2 {
+            letter-spacing: 1px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
+
+        #output {
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 15px;
+            width: 400px;
+            
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>JAVASCRIPT DATE METHODS DEMO</h2>
+
+<button onclick="showDateDetails()">Show Date Details</button>
+
+<div id="output">Output will appear here...</div>
+
+<script>
+    function showDateDetails() {
+
+        let today = new Date();
+
+        let monthNames = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+
+        let dayNames = [
+            "Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"
+        ];
+
+        let monthName = monthNames[today.getMonth()];
+        let dayName = dayNames[today.getDay()];
+
+        let output = "";
+
+        output += "Current Date & Time: " + today + "<br><br>";
+        output += "Year: " + today.getFullYear() + "<br>";
+        output += "Month Number (0-11): " + today.getMonth() + "<br>";
+        output += "Month Name: " + monthName + "<br>";
+        output += "Date: " + today.getDate() + "<br>";
+        output += "Day Number (0-6): " + today.getDay() + "<br>";
+        output += "Day Name: " + dayName + "<br>";
+        output += "Hours: " + today.getHours() + "<br>";
+        output += "Minutes: " + today.getMinutes() + "<br>";
+        output += "Seconds: " + today.getSeconds() + "<br>";
+
+        document.getElementById("output").innerHTML = output;
+    }
+</script>
+
+</body>
+</html>
